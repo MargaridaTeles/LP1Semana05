@@ -6,7 +6,7 @@ namespace LowerUnion
     {
         static void Main(string[] args)
         {
-            // ARRAY: 
+            Array.Sort(args);
         }
     }
 }
