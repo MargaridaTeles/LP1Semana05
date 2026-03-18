@@ -11,7 +11,18 @@ namespace LevelTwo
             {
                 CanvasImage image = new CanvasImage("tux.jpg");
 
-                image.MaxWidth(20);
+                image.MaxWidth(24);
+
+                AnsiConsole.Write(image);
+            }
+            else
+            {
+                string local = args[0];
+                int largura = int.Parse(args[1]);
+
+                CanvasImage image = new CanvasImage(local);
+
+                image.MaxWidth(largura);
 
                 AnsiConsole.Write(image);
             }
