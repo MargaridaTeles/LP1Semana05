@@ -13,6 +13,9 @@ namespace LevelOne
             Console.WriteLine("Hello LP!");
         }
 
+        /// <summary>
+        /// Add new method doc
+        /// </summary>
         private void NewMethod()
         {
             Console.Write("New Method");
