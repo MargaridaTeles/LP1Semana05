@@ -2,6 +2,9 @@
 
 namespace LevelOne
 {
+    /// <summary>
+    /// é uma class
+    /// </summary>
     public class MainIsHere
     {
         /// <summary>
