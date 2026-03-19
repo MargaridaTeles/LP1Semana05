@@ -8,5 +8,11 @@ namespace DungeonStats
         {
             Console.WriteLine("Hello LP!");
         }
+
+        private static int Damage(int attack, int defense)
+        {
+            return attack - defense;
+        }
+        
     }
 }
