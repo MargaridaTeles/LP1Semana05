@@ -31,7 +31,6 @@ namespace DungeonStats
             }
 
             AnsiConsole.Write(table);
-
         }
 
         private static int Damage(int attack, int defense)
