@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Spectre.Console;
 
 namespace DungeonStats
@@ -16,11 +17,17 @@ namespace DungeonStats
             table.AddColumn("Result");
             
 
-            if (args.Length == 1)
+            if (args.Length > 1)
             {
-                table.AddRow($"Damage {args[0]}");
-                table.AddRow($"Damage {args[0]}");
-                table.AddRow($"CriticalHit {args[0]}");
+                table.AddRow($"Damage {args[0]})", $"{Damage(int.Parse(args[0]))}");
+                table.AddRow($"Damage({args[0]}, {args[1]})", $"{Damage(int.Parse(args[0]), int.Parse(args[1]))}");
+                table.AddRow($"CriticalHit({Damage(int.Parse(args[0]), int.Parse(args[1]))})", $"{CriticalHit(int.Parse(args[0]))}");
+            }
+            else if (args.Length == 1)
+            {
+                table.AddRow($"Damage {args[0]})", $"{Damage(int.Parse(args[0]))}");
+                table.AddRow($"Damage({args[0]}, 2)", $"{Damage(int.Parse(args[0]), 2)}");
+                table.AddRow($"CriticalHit({Damage(int.Parse(args[0]), 2)})", $"{CriticalHit(int.Parse(args[0]))}");
             }
 
             AnsiConsole.Write(table);
