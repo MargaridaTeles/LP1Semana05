@@ -14,11 +14,14 @@ namespace DungeonStats
 
             table.AddColumn("Operation");
             table.AddColumn("Result");
+            
 
-            /*if (args.Length == 1)
+            if (args.Length == 1)
             {
-                
-            }*/
+                table.AddRow($"Damage {args[0]}");
+                table.AddRow($"Damage {args[0]}");
+                table.AddRow($"CriticalHit {args[0]}");
+            }
 
             AnsiConsole.Write(table);
 
@@ -38,14 +41,10 @@ namespace DungeonStats
         private static int CriticalHit(int damage)
         {
             // devolve a soma de 1 até Damage(attack, defense) se damage <= 0 e devolve 0
-            int dano;
-
             if (damage <= 0)
-                dano = 0;
-            else
-                dano = 1 + Damage(damage, 0);
+                return 0;
 
-            return dano;
+            return damage + CriticalHit(damage - 1);;
         }
         
     }
